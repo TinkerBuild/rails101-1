@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
        @group = Group.find(params[:id])
      end
 
+
    #new add crud
     def create
       @group = Group.new(group_params)
@@ -17,6 +18,10 @@ class GroupsController < ApplicationController
 
         redirect_to groups_path
     end
+  
+  def edit
+    @group = Group.find(params[:id])
+  end
 
     private
 
@@ -24,8 +29,6 @@ class GroupsController < ApplicationController
       params.require(:group).permit(:title, :description)
     end
 
-  def edit
-      @group = Group.find(params[:id])
-     end
+
 
 end
