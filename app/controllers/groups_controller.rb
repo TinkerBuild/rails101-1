@@ -4,7 +4,11 @@ class GroupsController < ApplicationController
   end
   def new
      @group = Group.new
-   end
+  end
+
+  def show
+       @group = Group.find(params[:id])
+     end
 
    #new add crud
     def create
