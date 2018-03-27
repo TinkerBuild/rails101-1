@@ -2,5 +2,6 @@
 
 Rails.application.routes.draw do
     resources :groups
-  root 'groupsc#index'
+  root 'groups#index'
 end
+
