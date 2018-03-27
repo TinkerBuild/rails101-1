@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -27,6 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+gem 'sqlite3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,7 +43,11 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+
 group :development do
+  group :production do
+    gem "pg"
+  end
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
